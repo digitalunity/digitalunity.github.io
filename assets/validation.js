@@ -1,6 +1,25 @@
 (() => {
+  // Set this once the Digital Unity GA4 web stream exists, e.g. G-XXXXXXXXXX.
+  const GA_MEASUREMENT_ID = '';
   const STORAGE_KEY = 'du_validation_context_v1';
   const TRACK_KEYS = ['src', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+
+  if (GA_MEASUREMENT_ID) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
+    document.head.appendChild(gaScript);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+  }
+
+  const gaEvent = (name, params = {}) => {
+    if (GA_MEASUREMENT_ID && typeof window.gtag === 'function') {
+      window.gtag('event', name, params);
+    }
+  };
 
   const currentUrl = new URL(window.location.href);
   const existing = (() => {
@@ -15,9 +34,7 @@
     if (value && !context[key]) context[key] = value.slice(0, 120);
   });
 
-  if (!context.landing_page) {
-    context.landing_page = currentUrl.pathname;
-  }
+  if (!context.landing_page) context.landing_page = currentUrl.pathname;
 
   if (!context.referrer && document.referrer) {
     try {
@@ -29,7 +46,6 @@
   }
 
   context.last_page = currentUrl.pathname;
-
   try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(context)); }
   catch (_) {}
 
@@ -57,6 +73,10 @@
         .slice(0, 80);
       if (label) url.searchParams.set('cta', label);
       link.href = url.toString();
+      gaEvent('contact_intent', {
+        cta: label || 'contact',
+        page_location: window.location.pathname
+      });
     });
   });
 
@@ -67,7 +87,7 @@
         catch (_) { return context; }
       })();
       const params = new URLSearchParams(window.location.search);
-      const cta = params.get('cta') || 'direct-email';
+      const cta = params.get('cta') || link.dataset.track || 'direct-email';
       const source = latest.src || latest.utm_source || latest.referrer || 'direct';
       const campaign = latest.utm_campaign || '';
       const medium = latest.utm_medium || '';
@@ -79,6 +99,14 @@
         `Last page: ${window.location.pathname}`,
         `CTA: ${cta}`
       ].filter(Boolean).join('\n');
+
+      gaEvent('generate_lead', {
+        lead_source: source,
+        campaign: campaign || '(none)',
+        cta,
+        landing_page: latest.landing_page || '/',
+        page_location: window.location.pathname
+      });
 
       const subject = 'Digital Unity enquiry';
       const body = `Hi Chris,\n\n\n\n---\nWebsite context\n${detail}`;
