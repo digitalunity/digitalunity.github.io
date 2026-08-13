@@ -1,5 +1,7 @@
 :root {
   --ink: #111111;
+  --brand-ink: #141a21;
+  --accent: #ff5a00;
   --paper: #fafafa;
   --surface: #ffffff;
   --muted: #686868;
@@ -34,13 +36,19 @@ header {
 }
 
 .logo {
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  font-size: 1rem;
+  display: block;
+  width: 190px;
+  height: 42px;
+  flex: 0 0 auto;
+  background: url('/assets/digital-unity-logo.svg') left center / contain no-repeat;
+  font-size: 0;
+  line-height: 0;
 }
+.logo:hover { text-decoration: none; }
 
 nav { display: flex; gap: 1.6rem; flex-wrap: wrap; }
 nav a { font-size: 0.88rem; color: var(--muted); }
+nav a:hover, .text-link:hover { color: var(--accent); }
 
 main {
   max-width: var(--max-width);
@@ -100,7 +108,7 @@ section p + p { margin-top: 1rem; }
   font-weight: 500;
   border: 1px solid var(--ink);
 }
-.button:hover { text-decoration: none; background: #2d2d2d; }
+.button:hover { text-decoration: none; background: var(--accent); border-color: var(--accent); }
 .text-link { font-size: 0.93rem; font-weight: 500; }
 
 .grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -111,7 +119,7 @@ section p + p { margin-top: 1rem; }
   padding: 1.6rem;
 }
 .card p, .stage p { margin: 0; font-size: 0.95rem; color: #444; }
-.stage span { display: block; margin-bottom: 2.5rem; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em; }
+.stage span { display: block; margin-bottom: 2.5rem; color: var(--accent); font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 600; }
 .stage a { display: inline-block; margin-top: 1.2rem; font-size: 0.9rem; font-weight: 500; }
 
 .split-section {
@@ -139,10 +147,10 @@ section p + p { margin-top: 1rem; }
   border-top: 1px solid var(--line);
 }
 .service-detail > div:last-child { max-width: 49rem; }
-.service-number { font-size: 0.8rem; letter-spacing: 0.12em; color: var(--muted); }
+.service-number { font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; }
 ul { margin: 1.5rem 0; padding-left: 1.2rem; }
 li { margin: 0.5rem 0; color: #333; }
-.note { margin-top: 1.8rem !important; padding-left: 1rem; border-left: 2px solid var(--ink); color: var(--muted); }
+.note { margin-top: 1.8rem !important; padding-left: 1rem; border-left: 2px solid var(--accent); color: var(--muted); }
 
 .cases-grid {
   display: grid;
@@ -167,6 +175,7 @@ li { margin: 0.5rem 0; color: #333; }
 }
 .contact-card { background: var(--surface); border: 1px solid var(--line); padding: 2rem; align-self: start; }
 .contact-link { font-size: clamp(1.2rem, 2.5vw, 1.75rem); font-weight: 500; letter-spacing: -0.025em; }
+.contact-link:hover { color: var(--accent); }
 .muted { color: var(--muted); font-size: 0.9rem; }
 
 footer {
@@ -189,6 +198,7 @@ footer {
 
 @media (max-width: 650px) {
   header { align-items: flex-start; flex-direction: column; gap: 1.25rem; padding: 1.7rem 1.25rem; }
+  .logo { width: 168px; height: 38px; }
   nav { gap: 0.9rem 1.2rem; }
   main { padding-left: 1.25rem; padding-right: 1.25rem; }
   .hero { padding-top: 3.5rem; }
