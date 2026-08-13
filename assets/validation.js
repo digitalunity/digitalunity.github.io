@@ -1,6 +1,5 @@
 (() => {
-  // Set this once the Digital Unity GA4 web stream exists, e.g. G-XXXXXXXXXX.
-  const GA_MEASUREMENT_ID = '';
+  const GA_MEASUREMENT_ID = 'G-52ND6VWQBK';
   const STORAGE_KEY = 'du_validation_context_v1';
   const TRACK_KEYS = ['src', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
