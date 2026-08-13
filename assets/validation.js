@@ -3,6 +3,14 @@
   const STORAGE_KEY = 'du_validation_context_v1';
   const TRACK_KEYS = ['src', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
+  if (!document.querySelector('link[rel="icon"]')) {
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.type = 'image/svg+xml';
+    favicon.href = '/assets/digital-unity-mark.svg';
+    document.head.appendChild(favicon);
+  }
+
   if (GA_MEASUREMENT_ID) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
