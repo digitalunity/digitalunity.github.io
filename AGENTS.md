@@ -6,9 +6,10 @@ This repository publishes the public Digital Unity website at `https://digitalun
 
 The site is not intended to be a generic software-agency brochure. It is the live market-validation artefact for Digital Unity's evidence-backed proposition.
 
-Before changing positioning, service language, case-study claims, analytics, conversion paths or public contact details, read:
+Before changing positioning, service language, case-study claims, analytics, conversion paths, visual identity or public contact details, read:
 
 - `docs/PROJECT-CONTEXT.md`
+- `docs/BRAND.md`
 
 ## Core positioning
 
@@ -129,7 +130,7 @@ The visual direction is intentionally restrained and professional. Do not introd
 
 For material changes:
 
-1. Read `docs/PROJECT-CONTEXT.md`.
+1. Read `docs/PROJECT-CONTEXT.md` and `docs/BRAND.md`.
 2. Inspect the current page and supporting evidence before editing.
 3. Work on a branch for non-trivial changes.
 4. Keep claims evidence-backed.
