@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-label="Digital Unity">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 122" role="img" aria-label="Digital Unity">
   <g transform="translate(0 0)">
-    <path fill="#FF5A00" d="M14 4h48c18 0 30 12 30 30v26c0 25-12 43-35 51-7 2-15 3-24 3H22V91h9c15 0 25-5 30-14H14C6 77 0 71 0 63V18C0 10 6 4 14 4Z"/>
-    <circle cx="56" cy="29" r="6" fill="#FFFFFF"/>
-    <path d="M72 52c0 13 5 20 15 22" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <path fill="#FF5A00" d="M13.219 13.215 H88.391 V108.004 H64.195 V42.141 L4.320 102.086 L4.035 121.059 L50.977 74.055 V121.219 H101.609 V0 H0 Z"/>
   </g>
-  <text x="120" y="73" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="600" letter-spacing="-2"><tspan fill="#FF5A00">Digital</tspan><tspan fill="#141A21"> Unity</tspan></text>
+  <text x="128" y="79" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="600" letter-spacing="-2"><tspan fill="#FF5A00">Digital</tspan><tspan fill="#141A21"> Unity</tspan></text>
 </svg>
