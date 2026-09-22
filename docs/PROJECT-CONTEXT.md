@@ -309,7 +309,8 @@ Do not expose the founder's direct `chris@digitalunity.co.uk` address as the pri
 
 - `index.html` — positioning, symptoms, three-stage overview, evidence and CTA
 - `services.html` — detailed three-stage service model
-- `cases.html` — six flagship proof cases
+- `cases.html` — six flagship proof cases and Hexjack Lens product entry point
+- `hexjack-lens/` — first-class Hexjack Lens product area covering product overview, operation, security, assurance, evidence and deployment
 - `company.html` — approach and principles
 - `contact.html` — problem-led enquiry route
 - `about.html` — legacy redirect
