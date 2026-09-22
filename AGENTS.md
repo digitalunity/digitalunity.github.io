@@ -120,6 +120,7 @@ Current MVP information architecture:
 - `/` — Home / buyer problem / proposition
 - `/services.html` — three-stage engagement model
 - `/cases.html` — flagship evidence
+- `/hexjack-lens/` — first-class Hexjack Lens product area
 - `/company.html` — approach and principles
 - `/contact.html` — problem-led enquiry path
 - `/about.html` — legacy redirect to Company
